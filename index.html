@@ -1,0 +1,247 @@
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer-container{
+            background-color: rgb(164, 157, 157);
+             border-radius: 5px;
+            box-shadow: 1px 1px 3px;
+            width: 50%;
+            margin: 50px auto;
+            align-items: center;
+            text-align: center;
+            padding: 5px;
+        }
+        .inner-container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            
+           
+        }
+        .inner{
+            margin: 10px;
+           
+        }
+        input{
+            padding: 5px;
+            margin: 5px;
+            border-radius: 3px;
+            text-align: center;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <form action="code.php" method="POST" enctype="multipart/form-data">
+            
+             <div class="outer-container ">
+                <h2>Nonsuch Enrolment Form</h2>
+                <div id="message"></div>
+            <div class="inner-container">
+                <div class="inner">
+                    <input
+                  type="text"
+                  class="form-control"
+                  id="organization"
+                  name="organization"
+                  placeholder="Enter your Organization"
+                />
+                </div>
+                <div class="inner">
+                    <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your Name"
+                  /> 
+                </div>
+            </div>
+            <div class="inner-container">
+                <div class="inner">
+                    <input
+                    type="text"
+                    class="form-control"
+                    id="policy_no"
+                    name="policy_no"
+                    placeholder="Enter your Policy No"
+                  />
+                </div>
+                <div class="inner">
+                    <input
+                    type="text"
+                    class="form-control"
+                    id="alternate_policy_no"
+                    name="alternate_policy_no"
+                    placeholder="Enter Alternate_policy_no"
+                  /> 
+                </div>
+            </div>
+            <div class="inner-container">
+                <div class="inner">
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="phone_no"
+                        name="phone_no"
+                        placeholder="Enter your Phone No."
+                      />
+                </div>
+                <div class="inner">
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="plan_type"
+                        name="plan_type"
+                        placeholder="Enter Plan Type e.g GOLD"
+                      /> 
+                </div>
+            </div>
+            <div class="inner-container">
+                <div class="inner">
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your Email Address"
+                          />
+                </div>
+                <div class="inner">
+                    <input
+                            type="text"
+                            class="form-control"
+                            id="location"
+                            name="location"
+                            placeholder="Enter your Location"
+                          /> 
+                </div>
+            </div>
+            <div class="inner-container">
+                <div class="inner">
+                    <input
+                                type="number"
+                                class="form-control"
+                                id="no_of_dependant"
+                                name="no_of_dependant"
+                                placeholder="Enter No. of Dependant"
+                              />
+                </div>
+                <div class="inner">
+                    <input
+                                type="text"
+                                class="form-control"
+                                id="provider"
+                                name="provider"
+                                placeholder="Enter your Provider"
+                              /> 
+                </div>
+            </div>
+            <div class="inner-container">
+                <div class="inner">
+                    <label for="gender" class="form-label"
+                                    >Gender</label>
+                                    <select name="gender">
+                                        <option selected>--select Gender--</option>
+                                        <option >Male</option>
+                                        <option >Female</option>
+                                    </select>
+                </div>
+                <div class="inner">
+                    <label for="dob" class="form-label"
+                                    >Date of Birth</label
+                                  >
+                                  <input
+                                    type="date"
+                                    class="form-control"
+                                    id="dob"
+                                    name="dob"
+                                    
+                                  /> 
+                </div>
+            </div>
+            <div class="inner-container">
+                <div class="inner">
+                    <label for="dob" class="form-label"
+                                            >Passport Photograph</label
+                                          >
+                                          <input
+                                            type="file"
+                                            class="form-control"
+                                            id="passport"
+                                            name="passport"
+                                            
+                                          /> 
+                </div>
+                <div class="inner">
+                    <label for="reg_status" class="form-label"
+                                                >Registration Status</label>
+                                                <select name="reg_status" id="reg_status">
+                                                    <option selected>--select Gender--</option>
+                                                    <option >Active</option>
+                                                    <option >Inactive</option>
+                                                </select>
+                </div>
+            </div><input type="submit" name="submit" value="Submit Details">
+        </div>
+        
+        </form>
+
+    </div>
+    <script src="assets/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" ></script>
+   <script>
+         $(document).ready(function(){
+              $('form').submit(function(e){
+                e.preventDefault();
+                var organization = $('#organization').val();
+                var name = $('#name').val();
+                var policy_no = $('#policy_no').val();
+                var alternate_policy_no = $('#alternate_policy_no').val();
+                var phone_no = $('#phone_no').val();
+                var plan_type = $('#plan_type').val();
+                var email = $('#email').val();
+                var location = $('#location').val();
+                var no_of_dependant = $('#no_of_dependant').val();
+                var provider = $('#provider').val();
+                var gender = $('#gender').val();
+                var dob = $('#dob').val();
+                var passport = $('#passport').val();
+                var reg_status = $('#reg_status').val();
+                $.ajax({
+                    url: 'process.php',
+                    type: 'POST',
+                    data: {
+                        organization: organization,
+                        name: name,
+                        policy_no: policy_no,
+                        alternate_policy_no: alternate_policy_no,
+                        phone_no: phone_no,
+                        plan_type: plan_type,
+                        email: email,
+                        location: location,
+                        no_of_dependant: no_of_dependant,
+                        provider: provider,
+                        gender:gender,
+                        dob: dob,
+                        passport: passport,
+                        reg_status: reg_status,
+                    },
+                    success: function(data){
+                        $('#message').html(data);
+                    },
+                    error: function(data){
+                        $('#message').html(data);
+                    },
+                });
+              })});
+   </script>
+</body>
+</html>

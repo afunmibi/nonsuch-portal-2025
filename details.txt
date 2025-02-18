@@ -1,0 +1,17 @@
+id
+status
+corporate client/organization
+enrollee name
+policy number : wb/23/001156-3 / 51/WBP001144P/GD / 51/WBP/001141/GD-5
+alternate id
+phone no
+type
+gender
+provider
+email address
+plan
+family status
+location
+date of birth
+number of dependant
+date captured

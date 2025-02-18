@@ -3,13 +3,13 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="assets\bootstrap-5.3.3\dist\css\bootstrap.min.css">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" >
+	<!-- <link rel="stylesheet" type="text/css" href="assets\bootstrap-5.3.3\dist\css\bootstrap.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" > -->
 	<title >Nonsuch Portal 2025</title>
 </head>
 <body>
 <div class=" py-3 container-fluid bg-gray">
-<h1 class="mx-5">Nonsuch Portal</h1>
+<h1 class=" bg-dark text-white p-3">Nonsuch Portal</h1>
 </div>
 
 <div class="container">
@@ -18,7 +18,7 @@
 	<h3 class="">Enrolment Portal </h3>
 </div>
 <div class="card-body">
-<form  action="" method="post">
+<form  action="" method="post" enctype=" ">
 	<div class="grid ">
   <div class="mb-2 g-col-6 g-col-md-4">
     <span class="px-2">1. </span><label for="sname" class="form-label">Surname: </label>
@@ -66,7 +66,7 @@
 </div>
 </div>
 
-<div class="card-footer text-center">
+<div class="card-footer text-center py-3 bg-dark text-white">
 	<p>nonsuchmedicare&copy2025</p>
 </div>
 </div>
